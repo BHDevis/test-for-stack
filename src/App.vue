@@ -55,7 +55,6 @@ const deleteOrganization = (id: number) => {
   organizations.value = organizations.value.filter((org) => org.id !== id);
 };
 
-// Добавляем computed для отображения страниц
 const displayPage = computed(() =>
   organizations.value.length === 0 ? 0 : currentPage.value
 );
@@ -64,7 +63,6 @@ const displayTotalPages = computed(() =>
   organizations.value.length === 0 ? 0 : totalPages.value
 );
 
-// Добавляем computed для иконок сортировки
 const getSortIcon = (field: SortField) => {
   if (sortField.value !== field) return "↕️";
   return sortDirection.value === "asc" ? "↑" : "↓";
